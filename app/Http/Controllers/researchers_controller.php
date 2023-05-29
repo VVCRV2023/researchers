@@ -85,6 +85,7 @@ class researchers_controller extends Controller
         $researchers->project_ukr=$req->input('project_ukr');
         $researchers->project_eu=$req->input('project_eu');
         $researchers->publications=$req->input('publications');
+        $researchers->project=$req->input('project');
         $researchers->save(); //виконання редагування на сервері
         return redirect('/researchers_search_form'); 
         //переадресація на головну сторінку. Переадресація на сторінку по імені маршруту: return redirect()->route('kafedry_add');

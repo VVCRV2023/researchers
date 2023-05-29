@@ -60,25 +60,35 @@
             <div class="form-group">
                 <label for="age">Адреса:</label>
                 <div class="form-inline justify-content-center">
-                    <label for="country"> Країна:</label>
-                    <input type="text" class="form-control mx-2" name="country" placeholder="Вкажіть країну" value="{{$data->country}}" readonly>
+                    <div>
+                        <label for="country"> Країна:</label>
+                        <input type="text" class="form-control mx-2" name="country" placeholder="Вкажіть країну" value="{{$data->country}}" readonly>
+                    </div>
 
-                    <label for="city">Місто:</label>
-                    <input type="text" class="form-control mx-2" name="city" placeholder="Вкажіть місто" value="{{$data->city}}" readonly>
+                    <div>
+                        <label for="city">Місто:</label>
+                        <input type="text" class="form-control mx-2" name="city" placeholder="Вкажіть місто" value="{{$data->city}}" readonly>
+                    </div>
 
-                    <label for="work">Місце роботи:</label>
-                    <input type="text" class="form-control mx-2" name="work" placeholder="Вкажіть місце роботи" value="{{$data->work}}" readonly>
+                    <div>
+                        <label for="work">Місце роботи:</label>
+                        <input type="text" class="form-control mx-2" name="work" placeholder="Вкажіть місце роботи" value="{{$data->work}}" readonly>
+                    </div>
                 </div>
             </div>
             <!-- nauka -->
             <div class="form-group">
                 <label for="age">Досягнення:</label>
                 <div class="form-inline justify-content-center">
-                    <label for="degree"> Науковий ступінь:</label>
-                    <input type="text" class="form-control mx-2" name="degree" placeholder="Вкажіть ступінь" value="{{$data->degree}}" readonly>
+                    <div>
+                        <label for="degree"> Науковий ступінь:</label>
+                        <input type="text" class="form-control mx-2" name="degree" placeholder="Вкажіть ступінь" value="{{$data->degree}}" readonly>
+                    </div>
 
-                    <label for="ranks">Вчене звання:</label>
-                    <input type="text" class="form-control mx-2" name="ranks" placeholder="Вкажіть звання" value="{{$data->ranks}}" readonly>
+                    <div>
+                        <label for="ranks">Вчене звання:</label>
+                        <input type="text" class="form-control mx-2" name="ranks" placeholder="Вкажіть звання" value="{{$data->ranks}}" readonly>
+                    </div>
                 </div>
             </div>
             <!-- interests -->
@@ -93,12 +103,12 @@
             </div>
              <!-- publons -->
              <div class="form-group">
-                <label for="publons">Профіль у Publons:</label>
+                <label for="publons">Профіль у Google Scholar:</label>
                 <input type="text" class="form-control" name="publons" placeholder="Профіль у Publons" value="{{$data->publons}}" readonly>
             </div>
             <!-- wos -->
             <div class="form-group">
-                <label for="wos">Профіль у Web of Science:</label>
+                <label for="wos">Профіль у Web of Science/Publons:</label>
                 <input type="text" class="form-control" name="wos" placeholder="Профіль у Web of Science" value="{{$data->wos}}" readonly>
             </div>
             <!-- research_gate -->
@@ -108,12 +118,12 @@
             </div>
             <!-- citation_index -->
             <div class="form-group">
-                <label for="citation_index">Індекси:</label>
+                <label for="citation_index">Науковометричні показники у Scopus:</label>
                 <div class="form-inline justify-content-center">
-                    <label for="citation_index"> Цитування:</label>
-                    <input type="number" class="form-control mx-2" name="citation_index" placeholder="Цитування" min="0"  max="999" value="{{$data->citation_index}}" readonly>
+                    <label for="citation_index"> Кількість цитат:</label>
+                    <input type="number" class="form-control mx-2" name="citation_index" placeholder="Цитування" min="0"  max="99999" value="{{$data->citation_index}}" readonly>
 
-                    <label for="hirsch_index">Хірша:</label>
+                    <label for="hirsch_index">Індекс Хірша:</label>
                     <input type="number" class="form-control mx-2" name="hirsch_index" placeholder="Хірша" min="0"  max="999" value="{{$data->hirsch_index}}" readonly>
                 </div>
             </div>
@@ -143,7 +153,7 @@
             </div>
             <!-- project_eu -->
             <div class="form-group">
-               <label for="project_eu">Участь у наукових проектах, фінансованих в ЄС:</label>
+               <label for="project_eu">Участь у наукових проектах, фінансованих закордонними організаціями:</label>
                <div class="col-lg-6 mx-auto ">
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="project_eu" id="project_eu1" value="0" {{ $data['project_eu'] == 0 ? 'checked' : '' }} {{ $data['project_eu'] <> 0 ? 'disabled' : '' }}>
@@ -165,6 +175,19 @@
                     </div>
                </div>
             </div>
+            <!-- project -->
+            <div class="form-group">
+                <label for="project">Дані про проекти (назва проекту, грантодавець, рік, обсяг фінансування):</label>
+                <textarea class="form-control auto-resize2" name="project" readonly>{{$data->project}}</textarea>
+                <script>
+                    const textArea2 = document.querySelector('.auto-resize2');
+                    textArea2.addEventListener('input', function() {
+                        this.style.height = 'auto';
+                        this.style.height = this.scrollHeight + 'px';
+                    });
+                </script>
+                <small class="form-text text-success">до 2000 символів</small>
+            </div>
             <!-- publications -->
             <div class="form-group">
                 <label for="publications">Посилання на основні наукові публікації:</label>
@@ -174,6 +197,7 @@
 
                     window.addEventListener('DOMContentLoaded', function() {
                         resizeTextArea(textArea);
+                        resizeTextArea(textArea2);
                     });
 
                     function resizeTextArea(textArea) {
@@ -187,7 +211,7 @@
                         this.style.height = this.scrollHeight + 'px';
                     });
                 </script>
-
+                <small class="form-text text-success">до 2000 символів</small>
             </div>
 
            

@@ -12,7 +12,8 @@
             <!-- pib -->
             <div class="form-group">
                 <label for="pib">Прізвище, ім'я, по батькові:</label>
-                <input type="text" class="form-control" name="pib" placeholder="Введіть ПІБ дослідника">
+                <input type="text" class="form-control" name="pib" placeholder="до 255 символів">
+                <small class="form-text text-success">до 255 символів</small>
             </div>
             <!-- gender -->
             <div class="form-group">
@@ -53,61 +54,83 @@
             <div class="form-group">
                 <label for="age">Адреса:</label>
                 <div class="form-inline justify-content-center">
-                    <label for="country"> Країна:</label>
-                    <input type="text" class="form-control mx-2" name="country" placeholder="Вкажіть країну" value="Україна">
+                    
+                    <div>
+                        <label for="country"> Країна:</label>
+                        <input type="text" class="form-control mx-2" name="country" placeholder="до 50 символів" value="Україна">
+                        <small class="form-text text-success">до 50 символів</small>
+                    </div>
 
-                    <label for="city">Місто:</label>
-                    <input type="text" class="form-control mx-2" name="city" placeholder="Вкажіть місто">
+                    <div>
+                        <label for="city">Місто:</label>
+                        <input type="text" class="form-control mx-2" name="city" placeholder="до 50 символів">
+                        <small class="form-text text-success">до 50 символів</small>
+                    </div>
 
-                    <label for="work">Місце роботи:</label>
-                    <input type="text" class="form-control mx-2" name="work" placeholder="Вкажіть місце роботи">
+                    <div>
+                        <label for="work">Місце роботи:</label>
+                        <input type="text" class="form-control mx-2" name="work" placeholder="до 50 символів">
+                        <small class="form-text text-success">до 50 символів</small>
+                    </div>
+                    
                 </div>
             </div>
             <!-- nauka -->
             <div class="form-group">
                 <label for="age">Досягнення:</label>
                 <div class="form-inline justify-content-center">
-                    <label for="degree"> Науковий ступінь:</label>
-                    <input type="text" class="form-control mx-2" name="degree" placeholder="Вкажіть ступінь">
+                    <div>
+                        <label for="degree"> Науковий ступінь:</label>
+                        <input type="text" class="form-control mx-2" name="degree" placeholder="до 50 символів">
+                        <small class="form-text text-success">до 50 символів</small>
+                    </div>
 
-                    <label for="ranks">Вчене звання:</label>
-                    <input type="text" class="form-control mx-2" name="ranks" placeholder="Вкажіть звання">
+                    <div>
+                        <label for="ranks">Вчене звання:</label>
+                        <input type="text" class="form-control mx-2" name="ranks" placeholder="до 20 символів">
+                        <small class="form-text text-success">до 20 символів</small>
+                    </div>
                 </div>
             </div>
             <!-- interests -->
             <div class="form-group">
                 <label for="interests">Сфера інтересів:</label>
-                <input type="text" class="form-control" name="interests" placeholder="Сфера інтересів">
+                <input type="text" class="form-control" name="interests" placeholder="до 255 символів">
+                <small class="form-text text-success">до 255 символів</small>
             </div>
              <!-- scopus -->
              <div class="form-group">
                 <label for="scopus">Профіль у Scopus:</label>
-                <input type="text" class="form-control" name="scopus" placeholder="Профіль у Scopus">
+                <input type="text" class="form-control" name="scopus" placeholder="до 255 символів">
+                <small class="form-text text-success">до 255 символів</small>
             </div>
              <!-- publons -->
              <div class="form-group">
-                <label for="publons">Профіль у Publons:</label>
-                <input type="text" class="form-control" name="publons" placeholder="Профіль у Publons">
+                <label for="publons">Профіль у Google Scholar:</label>
+                <input type="text" class="form-control" name="publons" placeholder="до 255 символів">
+                <small class="form-text text-success">до 255 символів</small>
             </div>
             <!-- wos -->
             <div class="form-group">
-                <label for="wos">Профіль у Web of Science:</label>
-                <input type="text" class="form-control" name="wos" placeholder="Профіль у Web of Science">
+                <label for="wos">Профіль у Web of Science/Publons:</label>
+                <input type="text" class="form-control" name="wos" placeholder="до 255 символів">
+                <small class="form-text text-success">до 255 символів</small>
             </div>
             <!-- research_gate -->
             <div class="form-group">
                 <label for="research_gate">Профіль у Research Gate:</label>
-                <input type="text" class="form-control" name="research_gate" placeholder="Профіль у Research Gate">
+                <input type="text" class="form-control" name="research_gate" placeholder="до 255 символів">
+                <small class="form-text text-success">до 255 символів</small>
             </div>
             <!-- citation_index -->
             <div class="form-group">
-                <label for="citation_index">Вкажіть бажаний індекс цитування:</label>
+                <label for="citation_index">Вкажіть бажану кількість цитат:</label>
                 <div class="form-inline justify-content-center">
                     <label for="citation_index1"> з:</label>
-                    <input type="number" class="form-control mx-2" name="citation_index1" placeholder="Нижня межа" min="0" value="0" max="999">
+                    <input type="number" class="form-control mx-2" name="citation_index1" placeholder="Нижня межа" min="0" max="99999" value="0" max="99999">
 
                     <label for="citation_index2">по:</label>
-                    <input type="number" class="form-control mx-2" name="citation_index2" placeholder="Верхня межа" min="0" value="10" max="999">
+                    <input type="number" class="form-control mx-2" name="citation_index2" placeholder="Верхня межа" min="0" max="99999" value="10" max="99999">
                 </div>
             </div>
             <!-- hirsch_index -->
@@ -147,7 +170,7 @@
             </div>
             <!-- project_eu -->
             <div class="form-group">
-               <label for="project_eu">Участь у наукових проектах, фінансованих в ЄС:</label>
+               <label for="project_eu">Участь у наукових проектах, фінансованих закордонними організаціями:</label>
                <div class="col-lg-6 mx-auto ">
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="project_eu" id="project_eu1" value="0" checked>
