@@ -130,7 +130,7 @@
                     <input type="number" class="form-control mx-2" name="citation_index1" placeholder="Нижня межа" min="0" max="99999" value="0" max="99999">
 
                     <label for="citation_index2">по:</label>
-                    <input type="number" class="form-control mx-2" name="citation_index2" placeholder="Верхня межа" min="0" max="99999" value="10" max="99999">
+                    <input type="number" class="form-control mx-2" name="citation_index2" placeholder="Верхня межа" min="0" max="99999" value="99999" max="99999">
                 </div>
             </div>
             <!-- hirsch_index -->
@@ -141,7 +141,7 @@
                     <input type="number" class="form-control mx-2" name="hirsch_index1" placeholder="Нижня межа" min="0" value="0" max="999">
 
                     <label for="hirsch_index2">по:</label>
-                    <input type="number" class="form-control mx-2" name="hirsch_index2" placeholder="Верхня межа" min="0" value="10" max="999">
+                    <input type="number" class="form-control mx-2" name="hirsch_index2" placeholder="Верхня межа" min="0" value="999" max="999">
                 </div>
             </div>
             <!-- project_ukr -->
